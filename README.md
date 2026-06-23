@@ -26,27 +26,34 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+A Streamlit-based numbers guessing game designed to challenge the player across different difficulty modes (Easy, Normal, Hard) with a dynamic scoring system.
 - [ ] Detail which bugs you found.
+Discovered inverted higher/lower hints due to swapped conditional logic, an unstable secret number tracking because of weird type-casting rules on even attempts, an unfair scoring mechanic, and an application lock-up after winning or losing because the game status state failed to clear upon resetting.
 - [ ] Explain what fixes you applied.
+Refactored all core operations into `logic_utils.py`, streamlined type consistency for accurate comparisons, flattened the score penalty so it is consistently transparent, fixed the "New Game" state reset parameters within `app.py`, and updated the automated unit tests to handle the new tuple response format.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. -- Select Difficulty -- Launch the application and pick a difficulty from the sidebar settings (e.g., Easy, Normal, or Hard) to establish your target number range and maximum allowable attempts.
+2. -- Review Debug Info -- Open the optional "Developer Debug Info" expander drop-down to check the registered backend state values, including the current score tracking, total attempts made, and current secret integer.
+3. -- Submit a Guess -- Input a number inside the specified bounds in the numeric input text field and click the "Submit Guess 🚀" button.
+4. -- Read Accurate Feedback -- Review the warning message prompts; the application now correctly signals a "Go LOWER!" or "Go HIGHER!" hint depending on your inputs.
+5. -- Start a New Game -- Click the "New Game 🔁" action button at any point (or after a win/loss validation block) to instantly clear previous match histories, roll a new secret index, and seamlessly reset you play status.
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
 
 ```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
+=================================================================================== test session starts ====================================================================================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0
+rootdir: C:\Users\Amand\Desktop\uni\codepath\AI110\ai110-module1show-gameglitchinvestigator-starter
+
+tests\test_game_logic.py ...                                                                                                                                                         [100%]
+
+==================================================================================== 3 passed in 0.02s =====================================================================================
 ```
 
 ## 🚀 Stretch Features
