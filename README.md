@@ -25,11 +25,11 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
+- [X] Describe the game's purpose.
 A Streamlit-based numbers guessing game designed to challenge the player across different difficulty modes (Easy, Normal, Hard) with a dynamic scoring system.
-- [ ] Detail which bugs you found.
+- [X] Detail which bugs you found.
 Discovered inverted higher/lower hints due to swapped conditional logic, an unstable secret number tracking because of weird type-casting rules on even attempts, an unfair scoring mechanic, and an application lock-up after winning or losing because the game status state failed to clear upon resetting.
-- [ ] Explain what fixes you applied.
+- [X] Explain what fixes you applied.
 Refactored all core operations into `logic_utils.py`, streamlined type consistency for accurate comparisons, flattened the score penalty so it is consistently transparent, fixed the "New Game" state reset parameters within `app.py`, and updated the automated unit tests to handle the new tuple response format.
 
 ## 📸 Demo Walkthrough
@@ -50,11 +50,14 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 =================================================================================== test session starts ====================================================================================
 platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0
 rootdir: C:\Users\Amand\Desktop\uni\codepath\AI110\ai110-module1show-gameglitchinvestigator-starter
+plugins: anyio-4.13.0
+collected 6 items                                                                                                                                                                           
 
-tests\test_game_logic.py ...                                                                                                                                                         [100%]
+tests\test_game_logic.py ......                                                                                                                                                       [100%]
 
-==================================================================================== 3 passed in 0.02s =====================================================================================
+==================================================================================== 6 passed in 0.06s =====================================================================================
 ```
+
 
 ## 🚀 Stretch Features
 

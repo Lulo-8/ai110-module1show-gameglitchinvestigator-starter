@@ -28,9 +28,9 @@
 
 | Edge Case | Prompt Used | AI-Suggested Test | Did It Pass? | Your Reasoning |
 |-----------|-------------|-------------------|--------------|----------------|
-| | | | | |
-| | | | | |
-| | | | | |
+| Decimal Numbers (e.g., "45.7") | "Please generate three new pytest cases within tests/test_game_logic.py to evaluate parse_guess checking decimal inputs..." | `test_parse_guess_decimal_truncates` | Yes |  Ensures numbers with floating points don't crash the input logic and gracefully convert to integers. |
+| Invalid/Text Input (e.g., "abc") | "Please generate three new pytest cases within tests/test_game_logic.py to evaluate parse_guess checking invalid inputs..." | `test_parse_guess_invalid_input_returns_false` | Yes | Verifies that UI receives a explicit error flag and message instead of triggering a generic application exception. |
+| Negative Values (e.g., "-10") | "Please generate three new pytest cases within tests/test_game_logic.py to evaluate parse_guess checking negative inputs..." | `test_parse_guess_negative_number` | Yes | Confirms that minus signs are successfully handled as valid integers by the data parsing step rather than misinterpreting them as text symbols. |
 
 ---
 
